@@ -1,0 +1,22 @@
+layout-macro-def (scores-calculation) {
+  params {
+    param (scores) {
+      type (Score) 
+      max (Many) min (Required)
+    }
+  }
+  
+  content {
+    section {
+      content {
+        for-each (scores) {
+          as (score) {
+            if (score.result == true) {
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}

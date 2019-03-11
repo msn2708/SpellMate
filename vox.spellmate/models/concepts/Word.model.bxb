@@ -1,0 +1,6 @@
+text (Word) {
+  description (__DESCRIPTION__)
+  features {
+    transient
+  }
+}

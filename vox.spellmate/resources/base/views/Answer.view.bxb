@@ -1,0 +1,19 @@
+input-view {
+  match: SpelledWord(this)
+  render {
+    form {
+      elements {
+        text-input {
+          id (spelledWord)
+          label(Spell the word)
+          required (true)
+          type (SpelledWord)
+        }
+      }
+      on-submit {
+        goal: SpelledWord
+        value: viv.core.FormElement(spelledWord)
+      }
+    }    
+  } 
+}

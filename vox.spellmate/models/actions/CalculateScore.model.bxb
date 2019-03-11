@@ -1,0 +1,11 @@
+action (CalculateScore) {
+  type(Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (announcer) {
+      type (Announcer)
+      min (Required) max (One)
+    }
+  }
+  output (ScoreBook)
+}

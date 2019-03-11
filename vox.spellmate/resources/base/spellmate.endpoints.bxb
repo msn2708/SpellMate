@@ -1,0 +1,39 @@
+endpoints {
+
+  action-endpoints {
+    action-endpoint (BeginSpellMate) {
+      accepted-inputs (announcer)
+      local-endpoint ("beginSpellMate.js")
+    }
+    action-endpoint (InitAnnouncer) {
+      accepted-inputs ()
+      local-endpoint ("initAnnouncer.js")
+    }
+    action-endpoint (InitQuestionBank) {
+      accepted-inputs ()
+      local-endpoint ("initQuestionBank.js")
+    }
+    action-endpoint (VerifyAnswer) {
+      accepted-inputs (announcer,answer)
+      local-endpoint ("verifyAnswer.js")
+    }
+    action-endpoint (AskNextQuestion) {
+      accepted-inputs (announcer)
+      local-endpoint ("askNextQuestion.js")
+    }
+    action-endpoint (GetAnswerFromUser) {
+      accepted-inputs (spelledWord)
+      local-endpoint ("getAnswerFromUser.js")
+    }
+    action-endpoint (AskCurrentQuestion) {
+      accepted-inputs (announcer)
+      local-endpoint ("askCurrentQuestion.js")
+    }
+    action-endpoint (RepeatQuestion) {
+      accepted-inputs (announcer)
+      local-endpoint ("repeatQuestion.js")
+    }
+
+  }
+
+}

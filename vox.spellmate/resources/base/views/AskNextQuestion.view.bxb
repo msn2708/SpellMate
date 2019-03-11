@@ -1,0 +1,53 @@
+result-view {
+  match: Announcer(this) {
+    from-output: AskNextQuestion
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          single-line {
+            text {
+              value("Here is your next question. Say Repeat Question to hear it again.")
+            }
+          }
+        }
+      }
+    }
+  }
+  followup {
+    if (this.counter == -1) {
+      prompt {
+        dialog {
+          template ("Would you like to hear your score?")
+        }
+        on-confirm {
+          intent {
+            goal: ScoreBook
+            value: $expr(this.scoreBook)
+          }
+        }
+        on-deny {       
+          message(Bye)
+        }
+      }
+    } else {
+      prompt {
+        dialog {
+          template ("Are you ready to answer the question. Say Yes or No.")
+        }
+        on-confirm {
+          intent {
+            goal {VerifyAnswer}
+            value: $expr(this)
+            subplan { goal {GetAnswerFromUser}}
+          }
+        }
+        on-deny {       
+          message(Bye)
+        }
+      }      
+    }
+  }
+}

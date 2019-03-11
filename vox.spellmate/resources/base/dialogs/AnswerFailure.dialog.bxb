@@ -1,0 +1,8 @@
+template-macro-def (AnswerFailure) {
+  content {
+    choose (Random) {
+      template ("Sorry! that is not correct")
+      template ("Better luck next time")      
+    }
+  }
+}

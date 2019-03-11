@@ -1,0 +1,7 @@
+structure (ScoreBook) {
+  description (Structure to hold the result of a score)
+  property (score) {
+    type (Score)
+    min (Required) max (Many)
+  }
+}

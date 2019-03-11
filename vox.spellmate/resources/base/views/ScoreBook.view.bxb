@@ -1,0 +1,25 @@
+result-view {
+  match: ScoreBook (this) { 
+  }
+  render {
+    
+    layout {
+      
+      layout-macro (scores-header) {
+        param ("header")
+      }
+      
+      layout-macro (scores-layout) {
+        param (scores) {
+          expression (this.score)
+        }
+      }
+      
+      // layout-macro (scores-calculation) {
+      //   param (scores) {
+      //     expression (this.score)
+      //   }
+      // }
+    }
+  }
+}

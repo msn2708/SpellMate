@@ -1,0 +1,56 @@
+layout-macro-def (scores-layout) {
+  params {
+    param (scores) {
+      max (Many) min (Required)
+      type (Score)
+    }
+  }
+
+  content {
+    section {
+      content {
+        for-each (scores) { 
+          as (score) {
+            hbox {
+              content {
+                vbox {
+                  halign (Start)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("#{value(score.question.challengeWord)}")
+                      }
+                    }
+                  }
+                }
+                vbox {
+                  halign (Center)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("#{value(score.answer.spelledWord)}")
+                      }
+                    }
+                  }
+                }
+                vbox {
+                  halign (End)
+                  valign (Middle)
+                  content {
+                    text {
+                      value {
+                        template ("#{value(score.result)}")
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

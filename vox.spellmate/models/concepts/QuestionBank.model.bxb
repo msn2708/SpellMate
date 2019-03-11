@@ -1,0 +1,8 @@
+structure (QuestionBank) {
+  description (A structure that holds all the questions for a session.)
+
+  property (questions) {
+    type (Question)
+    min (Optional) max (Many)
+  }   
+}

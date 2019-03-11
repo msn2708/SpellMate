@@ -1,0 +1,17 @@
+action (GetAnswerFromUser) {
+  type(Constructor)
+  description (__DESCRIPTION__)
+  collect {
+    computed-input (spelledWord) {
+      type (SpelledWord)
+      max (One) min (Required)
+      prompt-behavior (AlwaysElicitation)
+      compute {
+        intent {
+          goal: SpelledWord
+        }
+      }
+    }
+  }
+  output (Answer)
+}

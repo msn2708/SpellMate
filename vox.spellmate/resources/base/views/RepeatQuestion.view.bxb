@@ -1,0 +1,36 @@
+result-view {
+  match: Announcer(this) {
+    from-output: RepeatQuestion
+  }
+ 
+  render {
+    layout {
+      section {
+        content {
+          single-line {
+            text {
+              value("")
+            }
+          }
+        }
+      }
+    }
+  }
+  followup {
+    prompt {
+      dialog {
+        template ("Say Yes when you are ready or No to exit the game.")
+      }
+      on-confirm {
+        intent {
+          goal {VerifyAnswer}
+          value: $expr(this)
+          subplan { goal {GetAnswerFromUser}}
+        }
+      }
+      on-deny {       
+        message(Bye)
+      }
+    }
+  }
+}

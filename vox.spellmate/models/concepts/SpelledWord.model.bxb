@@ -1,0 +1,7 @@
+text (SpelledWord) {
+  description (__DESCRIPTION__)
+  role-of (Word)
+  features {
+    transient
+  }
+}

@@ -1,0 +1,10 @@
+template-macro-def (AnswerSuccess) {
+  content {
+    choose (Random) {
+      template ("Congratulations!")
+      template ("You did it!")
+      template ("Well done!")
+      template ("Good job!")
+    }
+  }
+}

@@ -1,0 +1,17 @@
+structure (Interaction) {
+  description (Encapsulates the interaction between Announcer and user)
+
+  property (announcer) {
+    type (Announcer)
+    min (Required) max (One)
+  }
+  property (question) {
+    type (Question)
+    min (Required) max (One)
+  }
+  property (answer) {
+    type (Answer)
+    min (Required) max (One)
+  }
+
+}

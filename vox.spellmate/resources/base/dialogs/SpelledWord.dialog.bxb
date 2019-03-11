@@ -1,0 +1,4 @@
+dialog (Result) {
+  match: SpelledWord
+  template("Spell the Word you heard.")
+}

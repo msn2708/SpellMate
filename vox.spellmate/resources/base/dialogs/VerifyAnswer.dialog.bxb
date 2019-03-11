@@ -1,0 +1,19 @@
+dialog (Result) {
+  match: Announcer (this) {
+    from-output: VerifyAnswer (action)
+  }
+
+  if(this.counter >=0) {
+    if (this.scoreBook.score[counter].result == true) {
+      template-macro(AnswerSuccess)
+    } else {
+      template-macro (AnswerFailure)
+    }
+  } else {
+    if (this.scoreBook.score[counter].result == true) {
+      template-macro(AnswerSuccess)
+    } else {
+      template-macro(AnswerSuccess)
+    }
+  }
+}

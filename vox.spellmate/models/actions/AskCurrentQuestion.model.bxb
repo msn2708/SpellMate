@@ -1,0 +1,11 @@
+action (AskCurrentQuestion) {
+  type(Search)
+  description (Initialize counter )
+  collect {
+    input (announcer) {
+      type (Announcer)
+      min (Required) max (One)
+    }
+  }
+  output (Announcer)
+}

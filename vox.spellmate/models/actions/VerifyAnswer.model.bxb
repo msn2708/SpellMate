@@ -1,0 +1,15 @@
+action (VerifyAnswer) {
+  type(Calculation)
+  description (Verify the answer and enter the result into the ScoreBook)
+  collect {
+    input (announcer) {
+      type (Announcer)
+      min (Required) max (One)
+    }
+    input (answer) {
+      type (Answer)
+      min (Required) max (One)
+    }
+  }
+  output (Announcer)
+}
