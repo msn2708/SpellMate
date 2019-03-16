@@ -16,11 +16,11 @@ result-view {
       }
     }
   }
-  followup {
+  followup {    
     prompt {
       dialog {
-        template ("Are you ready to answer the question. Say Yes or No.")
-      }
+        template ("You can spell the word when you are ready.")
+      }    
       on-confirm {
         intent {
           goal {VerifyAnswer}

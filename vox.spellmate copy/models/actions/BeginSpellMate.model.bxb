@@ -1,0 +1,16 @@
+action (BeginSpellMate) {
+  type(Search)
+  description (__DESCRIPTION__)
+  collect {
+    computed-input (announcer) {
+      type (Announcer)
+      min (Required) max (One)
+      compute {
+        intent {
+          goal {@context (Continuation) InitAnnouncer}
+        }
+      }
+    }
+  }
+  output (Announcer)
+}

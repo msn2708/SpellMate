@@ -1,0 +1,16 @@
+action (InitInteraction) {
+  type(Constructor)
+  description (__DESCRIPTION__)
+  collect {
+    input (announcer) {
+      type (Announcer)
+      min (Optional) max (One)
+      default-init {
+        intent {
+          goal: InitAnnouncer
+        }
+      }
+    }
+  }
+  output (Interaction)
+}

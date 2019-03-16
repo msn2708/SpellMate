@@ -1,0 +1,22 @@
+capsule {
+  id (vox.spellmate)
+  version (0.1.1)
+  format (3)
+  targets {
+    target (bixby-mobile-en-US)
+    target (bixby-speaker-en-US)
+  }
+
+  capsule-imports {
+
+    import (viv.geo) {
+      as (geo) version (9.6.3)
+    }
+    import (viv.core) {
+      as (core)
+    }
+    import (viv.time) {
+      as (time) version (2.63.9)
+    }
+  }
+}

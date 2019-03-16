@@ -1,0 +1,5 @@
+train (t-k9587alih3kic0angfutwm7mw) {
+  utterance ("[g:SpelledWord:prompt] {[g:SpelledWord] (S PE LLED ABCD)[v:Word]}")
+  plan (Y2BmkCzLr9ArLkjNyclNLEnVCwaxUlPC84tS8EkJoUqBxZgYGIGYAUjyMLAAaWYwGyTKCAA=)
+  last-modified (1552525847418)
+}

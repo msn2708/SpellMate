@@ -1,0 +1,5 @@
+train (t-b11jq55tb421ml59g9io23yge) {
+  utterance ("[g:Announcer:continue:AskCurrentQuestion,r:VerifyAnswer] {[g:SpelledWord] (S O ME WORD)[v:Word]}")
+  plan (Y2BnEC/Lr9ArLkjNyclNLEnVc8zLyy/NS04tYpBClQhLLcpMq3TMKy4HyuHUJIIuAVYujyrqnloCkXArys8NLQYqkERVEAxipaaE5xelMAihSoHF2BgYGZgYmBlYGFiBbAYgjxHKY2RgAPMZgDwIZgSrAZIA)
+  last-modified (1552691084029)
+}

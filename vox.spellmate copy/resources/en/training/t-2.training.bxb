@@ -1,0 +1,5 @@
+train (t-2uz02pbfphfshkzd4cih6m07c) {
+  utterance ([g:Announcer,r:BeginSpellMate] begin game)
+  plan (Y2BiEC/Lr9ArLkjNyclNLEnVc8zLyy/NS04tYpBBlXBKTc/MCwZxfYFcBkYgZABjJggNAA==)
+  last-modified (1552753928055)
+}

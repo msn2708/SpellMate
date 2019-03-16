@@ -1,0 +1,11 @@
+action (GetAnswerFromUser) {
+  type(Constructor)
+  description (__DESCRIPTION__)
+  collect {
+    input (spelledWord) {
+      type (SpelledWord)
+      max (One) min (Required)
+    }
+  }
+  output (Answer)
+}

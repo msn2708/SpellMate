@@ -1,0 +1,16 @@
+structure (Announcer) {
+  description (__DESCRIPTION__)
+  
+  property (questionBank) {
+    type (QuestionBank)
+    min (Required) max (One)
+  }
+  property (scoreBook) {
+    type (ScoreBook) 
+    min (Optional) max (One)
+  }
+  property (counter) {
+    type (core.Integer)
+    min (Required) max (One)
+  }
+}

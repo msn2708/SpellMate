@@ -1,0 +1,10 @@
+structure (Answer) {
+  description (__DESCRIPTION__)
+  property (spelledWord) {
+    type (SpelledWord)
+    min (Required) max (One)
+  }
+  features {
+    transient
+  }
+}

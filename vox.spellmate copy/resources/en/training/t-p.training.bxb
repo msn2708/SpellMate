@@ -1,0 +1,10 @@
+train (t-ph85vwnlkul31fxlsm705z4i5) {
+  utterance ("[g:Announcer,r:VerifyAnswer] {[g:SpelledWord] (epy nom ou s)[v:Word]}")
+  plan (Y2BnEC/Lr9ArLkjNyclNLEnVc8zLyy/NS04tYpBClQhLLcpMq3TMKy4HyuHUJIIuAVYujyrqnloCkXArys8NLQYqkERVEAxipaaE5xelMAihSoHF2BgYGZgYmBlYGFiBbAYgjxHKY2RgAPMZgDwIZgSrAZIA)
+  last-modified (1552755671468)
+}
+train (t-pqn20wbtb7wuixej9zp09ec5f) {
+  utterance ("[g:SpelledWord:prompt] {[g:SpelledWord] (Second)[v:Word]}")
+  plan (Y2BmkCzLr9ArLkjNyclNLEnVCwaxUlPC84tS8EkJoUqBxZgYGIGYAUjyMLAAaWYwGyTKCAA=)
+  last-modified (1552525847501)
+}

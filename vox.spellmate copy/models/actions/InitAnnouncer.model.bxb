@@ -1,0 +1,5 @@
+action (InitAnnouncer) {
+  type(Constructor)
+  description (__DESCRIPTION__)
+  output (Announcer)
+}

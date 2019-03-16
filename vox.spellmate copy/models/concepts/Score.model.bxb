@@ -1,0 +1,15 @@
+structure (Score) {
+  description (__DESCRIPTION__)
+  property (question) {
+    type (Question)
+    min (Required) max (One)
+  }
+  property (answer) {
+    type (Answer)
+    min (Required) max (One)
+  }
+  property (result) {
+    type (core.Boolean)
+    min (Required) max (One)
+  }
+}

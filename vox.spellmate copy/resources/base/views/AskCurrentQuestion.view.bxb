@@ -1,0 +1,37 @@
+result-view {
+  match: Announcer(this) {
+    from-output: AskCurrentQuestion
+  }
+ 
+  // message ("Here is your next question. Say Repeat Question to hear it again.")
+  render {    
+    layout {
+      section {
+        content {
+          single-line {
+            text {
+              value("")
+            }
+          }
+        }
+      }
+    }
+  }
+  // followup {
+  //   prompt {
+  //     dialog {
+  //       template ("Are you ready to answer the question. Say Yes or No.")
+  //     }
+  //     on-confirm {
+  //       intent {
+  //         goal {VerifyAnswer}
+  //         value: $expr(this)
+  //         subplan { goal {GetAnswerFromUser}}
+  //       }
+  //     }
+  //     on-deny {       
+  //       message(Bye)
+  //     }
+  //   }
+  // }
+}

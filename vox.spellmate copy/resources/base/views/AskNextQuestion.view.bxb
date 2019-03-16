@@ -1,0 +1,52 @@
+result-view {
+  match: Announcer(this) {
+    from-output: AskNextQuestion (action)
+  }
+
+  render {
+    layout {
+      section {
+        content {
+          single-line {
+            text {
+              value(" ")
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  followup {
+    if (this.counter == -1) {
+      prompt {
+        dialog (Would you like to see how you scored?)
+        on-confirm {
+          intent {
+            goal: ScoreBook
+            value: $expr(this.scoreBook)
+          }
+        }
+        on-deny {       
+          message(Bye)
+        }
+      }
+    } else {
+      prompt {
+        dialog {
+          template ("")
+        }
+        on-confirm {
+          intent {
+            goal {VerifyAnswer}
+            value: $expr(this)
+            subplan { goal {GetAnswerFromUser}}
+          }
+        }
+        on-deny {       
+          message(Bye)
+        }
+      }      
+    }
+  }
+}

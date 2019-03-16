@@ -1,0 +1,15 @@
+dialog (Elicitation) {
+  match: Answer (this) {
+    to-input: VerifyAnswer (action)
+  }
+  template(" ")
+  if(action.announcer.counter >= 0) {
+    if(action.announcer.counter == 0) {
+      template("Here is your first question. Say Repeat Question to hear it again. The word to spell is #{value(action.announcer.questionBank.questions[action.announcer.counter].challengeWord)}.")
+    } else {
+      template("Here is your next question. The word to spell is #{value(action.announcer.questionBank.questions[action.announcer.counter].challengeWord)}.")
+    }
+  } else {
+    template("That is all the questions I have. Would you like to hear your score?")    
+  }
+}

@@ -1,0 +1,5 @@
+action (InitQuestionBank) {
+  type(Constructor)
+  description (Initialize a Question Bank with Questions)
+  output (QuestionBank)
+}

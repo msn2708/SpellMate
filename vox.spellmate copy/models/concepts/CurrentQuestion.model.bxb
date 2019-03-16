@@ -1,0 +1,4 @@
+structure (CurrentQuestion) {
+  description (__DESCRIPTION__)
+  extends (Question)
+}

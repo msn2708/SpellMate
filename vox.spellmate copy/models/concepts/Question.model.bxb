@@ -1,0 +1,12 @@
+structure (Question) {
+  description (__DESCRIPTION__)
+
+  property (challengeWord) {
+    type (ChallengeWord)
+    min (Required) max (One)
+  }
+  property (index) {
+    type (core.Integer)
+    min (Required) max (One)
+  }
+}
