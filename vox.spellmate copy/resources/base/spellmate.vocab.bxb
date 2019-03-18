@@ -1,0 +1,6 @@
+vocab (MagicWord) {
+  "Begin" {"Begin Game", "Begin" "Begin SpellMate" "SpellMate"}
+  "Start" {"Start Game", "Start" "Start SpellMate"}
+  "Restart" {"Restart the game", "Restart" "Restart SpellMate" "Restart game"}
+  "Stop" {"Stop the game", "Stop" "Stop SpellMate" "Stop game"}
+}

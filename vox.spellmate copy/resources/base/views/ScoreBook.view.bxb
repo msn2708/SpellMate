@@ -1,5 +1,5 @@
 result-view {
-  match: ScoreBook (this) { 
+  match: ScoreBook (this) {
   }
   render {
     
@@ -15,11 +15,11 @@ result-view {
         }
       }
       
-      // layout-macro (scores-calculation) {
-      //   param (scores) {
-      //     expression (this.score)
-      //   }
-      // }
+      layout-macro (scores-calculation) {
+        param (scoreBook) {
+          expression (this)
+        }
+      }
     }
   }
 }

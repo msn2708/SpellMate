@@ -21,7 +21,7 @@ module.exports.function = function initAnnouncer () {
       score[i].answer = {spelledWord:' '} 
       score[i].result = false
     }
-    return {questionBank:{questions:questions}, scoreBook:{score:score}, counter:0}
+    return {questionBank:{questions:questions}, scoreBook:{score:score, correctAnswerCount:0}, counter:0}
   } else {
     return null
   }

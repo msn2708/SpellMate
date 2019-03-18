@@ -1,0 +1,11 @@
+template-macro-def (GameFinished) {
+  params {
+    param (scoreBook) {
+      type (ScoreBook)
+      max (One) min (Required)
+    }
+  }
+  content {
+    template ("The Game is complete. You got #{value(scoreBook.correctAnswerCount)} of the #{size(scoreBook) +1} questions correct. Would you like to start another game?")
+  }
+}

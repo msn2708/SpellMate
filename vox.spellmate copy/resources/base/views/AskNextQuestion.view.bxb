@@ -23,18 +23,21 @@ result-view {
         dialog (Would you like to see how you scored?)
         on-confirm {
           intent {
-            goal: ScoreBook
-            value: $expr(this.scoreBook)
+            goal: CalculateScore
+            value: $expr(this)
           }
         }
         on-deny {       
-          message(Bye)
+          intent {
+            goal: TerminateGame
+            value: $expr(this)
+          }
         }
       }
     } else {
       prompt {
         dialog {
-          template ("")
+          template (" ")
         }
         on-confirm {
           intent {

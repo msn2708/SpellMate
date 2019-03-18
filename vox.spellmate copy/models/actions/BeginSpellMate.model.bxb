@@ -1,7 +1,13 @@
 action (BeginSpellMate) {
   type(Search)
   description (__DESCRIPTION__)
+  
   collect {
+    input (magicWord) {
+      type (MagicWord)
+      max (One) min (Required)
+      prompt-behavior (Default)
+    }
     computed-input (announcer) {
       type (Announcer)
       min (Required) max (One)

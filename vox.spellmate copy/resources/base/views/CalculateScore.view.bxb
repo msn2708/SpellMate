@@ -1,0 +1,43 @@
+result-view {
+  match: Announcer (this) {
+    from-output: CalculateScore
+  }
+  render {
+    
+    layout {
+      
+      // layout-macro (scores-header) {
+      //   param ("header")
+      // }
+      
+      layout-macro (scores-layout) {
+        param (scores) {
+          expression (this.scoreBook.score)
+        }
+      }
+      
+      // layout-macro (scores-calculation) {
+      //   param (scoreBook) {
+      //     expression (this.scoreBook)
+      //   }
+      // }
+    }
+  }
+  followup {    
+    prompt {
+      dialog ("")
+      on-confirm {
+        intent {
+          goal: BeginSpellMate
+          value: MagicWord(Begin)
+        }
+      }
+      on-deny {
+        intent {
+          goal: TerminateGame
+          value: $expr(this)
+        }
+      }
+    }
+  }
+}

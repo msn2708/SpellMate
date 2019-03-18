@@ -1,0 +1,11 @@
+template-macro-def (RevealScore) {
+  params {
+    param (scoreBook) {
+      type (ScoreBook)
+      max (One) min (Required)
+    }
+  }
+  content {
+    template ("You got #{value(scoreBook.correctAnswerCount)} questions correct.")
+  }
+}

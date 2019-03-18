@@ -1,0 +1,22 @@
+dialog (Result) {
+  match: Announcer (this) {
+    from-output: CalculateScore (action)
+  }
+
+  if(this.counter == -1) {
+    // the game is done, 
+    template-macro (GameFinished) {
+      param (scoreBook) {
+        expression (this.scoreBook)
+      }
+    }
+
+  } else {
+    // say the number of correct entries
+    template-macro (RevealScore) {
+      param (scoreBook) {
+        expression (this.scoreBook)
+      }
+    }
+  }
+}

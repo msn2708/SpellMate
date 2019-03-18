@@ -4,4 +4,8 @@ structure (ScoreBook) {
     type (Score)
     min (Required) max (Many)
   }
+  property (correctAnswerCount) {
+    type (CorrectAnswerCount)
+    min (Required) max (One)
+  }
 }

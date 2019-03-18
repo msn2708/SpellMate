@@ -1,3 +1,3 @@
-module.exports.function = function beginSpellMate (announcer) {
+module.exports.function = function beginSpellMate (magicWord, announcer) {
   return announcer
 }

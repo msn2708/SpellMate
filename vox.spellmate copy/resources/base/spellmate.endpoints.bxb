@@ -2,7 +2,7 @@ endpoints {
 
   action-endpoints {
     action-endpoint (BeginSpellMate) {
-      accepted-inputs (announcer)
+      accepted-inputs (magicWord, announcer)
       local-endpoint ("beginSpellMate.js")
     }
     action-endpoint (InitAnnouncer) {
@@ -33,7 +33,10 @@ endpoints {
       accepted-inputs (announcer)
       local-endpoint ("repeatQuestion.js")
     }
-
+    action-endpoint (CalculateScore) {
+      accepted-inputs (announcer)
+      local-endpoint ("calculateScore.js")
+    }
   }
 
 }

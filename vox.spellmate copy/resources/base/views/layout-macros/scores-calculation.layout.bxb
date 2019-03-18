@@ -1,7 +1,7 @@
 layout-macro-def (scores-calculation) {
   params {
-    param (scores) {
-      type (Score) 
+    param (scoreBook) {
+      type (ScoreBook) 
       max (Many) min (Required)
     }
   }
@@ -9,11 +9,9 @@ layout-macro-def (scores-calculation) {
   content {
     section {
       content {
-        for-each (scores) {
-          as (score) {
-            if (score.result == true) {
-              
-            }
+        single-line {
+          text {
+            value("#{integer(scoreBook.correctAnswerCount)}")
           }
         }
       }

@@ -1,0 +1,40 @@
+result-view {
+  match: Announcer(this) {
+    from-output: TerminateGame (action)
+  }
+
+  render {
+    layout {
+      layout-macro (scores-layout) {
+        param (scores) {
+          expression (this.scoreBook.score)
+        }
+      }
+      
+      // layout-macro (scores-calculation) {
+      //   param (scores) {
+      //     expression (this.score)
+      //   }
+      // }
+    }
+    
+  }
+  
+  followup {
+    prompt {
+      dialog ("")
+      on-confirm {
+        intent {
+          goal {TerminateGame}
+          value: $expr(this)
+        }
+      }
+      on-deny {
+        intent {
+          goal {TerminateGame}
+          value: $expr(this)
+        }
+      }
+    }
+  }
+}

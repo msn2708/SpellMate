@@ -5,9 +5,9 @@ layout-macro-def (scores-header) {
       type (core.Text)
     }
   }
-    content {
+  content {
     section {
-      content {
+      content {                
         hbox {
           content {
             vbox {

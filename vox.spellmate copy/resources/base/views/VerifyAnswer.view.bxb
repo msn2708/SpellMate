@@ -7,121 +7,126 @@ result-view {
     layout {
       section {
         title {
-          if (this.scoreBook.score[this.counter].result == true) {
-            choose (Random) {              
-              template ("Congratulations!")
-              template ("You did it!")
-              template ("Well done!")
-              template ("Good job!")
-            }
-          } else {
-            choose (Random) {
-              template ("Sorry! that is not correct")
-              template ("Better luck next time")      
-            }
-          }        
+          if(this.counter != -1) {
+            if (this.scoreBook.score[this.counter].result == true) {
+              choose (Random) {              
+                template ("Congratulations!")
+                template ("You did it!")
+                template ("Well done!")
+                template ("Good job!")
+              }
+            } else {
+              choose (Random) {
+                template ("Sorry! that is not correct")
+                template ("Better luck next time")      
+              }
+            }        
+          }
         }
+
         content {
-          if (this.scoreBook.score[this.counter].result == true) {
-            hbox {
-              content {
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("Question")
+          if(this.counter != -1) {
+            if (this.scoreBook.score[this.counter].result == true) {
+              hbox {
+                content {
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("Question")
+                      }
                     }
                   }
-                }
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("Your answer")
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("Your answer")
+                      }
                     }
                   }
                 }
               }
+              hbox {
+                content {
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
+                        style (Title_M)
+                      }
+                    }
+                  }
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("#{value(action.answer.spelledWord)}")
+                        style (Title_M)
+                      }
+                    }
+                  }
+                }
+              }
+            } else {
+              hbox {
+                content {
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("Question")
+                      }
+                    }
+                  }
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("Your answer")
+                      }
+                    }
+                  }
+                }
+              }
+              hbox {
+                content {
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
+                        style (Title_M)
+                      }
+                    }
+                  }
+                  vbox {
+                    halign (Start)
+                    valign (Baseline)
+                    content {
+                      text {
+                        value ("#{value(action.answer.spelledWord)}")
+                        style (Title_S)
+                      }
+                    }
+                  }
+                }
+              }            
             }
-            hbox {
-              content {
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
-                      style (Title_M)
-                    }
-                  }
-                }
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("#{value(action.answer.spelledWord)}")
-                      style (Title_M)
-                    }
-                  }
-                }
-              }
-            }
-          } else {
-            hbox {
-              content {
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("Question")
-                    }
-                  }
-                }
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("Your answer")
-                    }
-                  }
-                }
-              }
-            }
-            hbox {
-              content {
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
-                      style (Title_M)
-                    }
-                  }
-                }
-                vbox {
-                  halign (Start)
-                  valign (Baseline)
-                  content {
-                    text {
-                      value ("#{value(action.answer.spelledWord)}")
-                      style (Title_S)
-                    }
-                  }
-                }
-              }
-            }            
           }
         }
       }
     }
   }
-  
+
   followup {
     if (this.counter == -1) {
       prompt {
@@ -130,8 +135,8 @@ result-view {
         }
         on-confirm {
           intent {
-            goal: ScoreBook
-            value: $expr(this.scoreBook)
+            goal: CalculateScore
+            value: $expr(this)
           }
         }
         on-deny {       

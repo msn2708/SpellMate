@@ -31,7 +31,10 @@ result-view {
         }      
       }
       on-deny {
-        message(Bye)
+        intent {
+          goal: TerminateGame
+          value: $expr(this)
+        }
       }
     }
   }

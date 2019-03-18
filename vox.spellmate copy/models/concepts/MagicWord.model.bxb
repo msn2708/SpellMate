@@ -1,0 +1,7 @@
+enum (MagicWord) {
+  description (__DESCRIPTION__)
+  symbol (Begin)
+  symbol (Start)
+  symbol (Restart)
+  symbol (Stop)
+}

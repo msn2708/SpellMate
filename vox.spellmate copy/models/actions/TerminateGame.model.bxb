@@ -1,6 +1,6 @@
-action (CalculateScore) {
-  type(Search)
-  description (__DESCRIPTION__)
+action (TerminateGame) {
+  type(Calculation)
+  description (Terminate the Game)
   collect {
     input (announcer) {
       type (Announcer)

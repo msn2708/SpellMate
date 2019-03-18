@@ -1,0 +1,90 @@
+layout-macro-def (score-layout) {
+  params {
+    param (score) {
+      type (Score)
+      max (One) min (Required)
+    }
+  }
+
+  content {
+    // section {
+    //   content {
+    cell-card {
+      slot1 {
+        image {
+          shape (Circle)
+          url {
+            if (score.result == true) {
+              template ("/images/correct.jpg")
+            } else {
+              template ("/images/incorrect.jpg")              
+            }            
+          }
+        }
+      }
+      slot2 {
+        content {
+          order (PrimarySecondary)
+          primary {
+            if (score.result == true) {
+              template ("#{value(score.question.challengeWord)}")
+            } else {           
+              template ("#{value(score.question.challengeWord)}")
+            }               
+          }
+          secondary {
+            template ("#{value(score.answer.spelledWord)}")
+          }
+        }
+      }
+    }
+  }
+  //   image-card {
+  //     aspect-ratio (16:9)
+  //     image-object-fit (Cover)
+  // 
+  //     title-area {
+  //       halign (Start)
+  // 
+  //       slot1 {
+  //         if (score.result == true) {
+  //           text {             
+  //             style (Title_M)
+  //             value 
+  //             {template ("#{value(score.question.challengeWord)}")}
+  //           }
+  //         } else {           
+  //           text {
+  //             style (Title_M)
+  //             value {template ("#{value(score.question.challengeWord)}")}
+  //           }               
+  //         }
+  //       }
+  // 
+  //       slot2 {          
+  //         single-line {
+  //           text {
+  //             style(Title_M)
+  //             value {
+  //               template ("#{value(score.answer.spelledWord)}")
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  // 
+  //     text-position (Overlay)
+  // 
+  //     image-url {
+  //       if (score.result == true) {
+  //         template ("/images/Untitled.jpg")
+  //       } else {
+  //         template ("/images/Untitled.jpg")              
+  //       }
+  //     }
+  //   }
+}
+// }
+//   }
+// }
+
