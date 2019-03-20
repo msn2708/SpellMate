@@ -1,15 +1,25 @@
 dialog (Result) {
   match: Announcer (this) {
     from-output: AskNextQuestion    
-  }
-  
-  if(this.counter >= 0) {
-    if(this.counter == 0) {
-      template("Here is your first question. Say Repeat Question to hear it again. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.")
-    } else {
-      template("The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.")  
     }
-  } else {
-    template("That is all the questions I have.")    
+
+  if(this.counter >= -1) {
+    if(this.counter == 0) {
+      template ("Question #{this.counter + 1}. Say Repeat Question to hear it again" ) {
+        speech ("Here is your first question. Say Repeat Question to hear it again. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.") 
+      }
+    } else-if (this.counter == size(this.questionBank.questions)-1) {
+      template ("Question #{this.counter + 1}. Say Repeat Question to hear it again" ) {
+        speech ("Here is your last question. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.") 
+      } 
+    } else-if (this.counter < size(this.questionBank.questions)-1) {
+      template ("Question #{this.counter + 1}. Say Repeat Question to hear it again" ) {
+        speech ("Here is your next question. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.") 
+      }      
+    } else {
+      template (Done with all questions! Would you like to see your score?) {
+        speech ("That is all the questions I have.")
+      }    
+    }
   }
 }

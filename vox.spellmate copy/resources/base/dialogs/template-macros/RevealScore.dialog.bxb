@@ -6,6 +6,6 @@ template-macro-def (RevealScore) {
     }
   }
   content {
-    template ("You got #{value(scoreBook.correctAnswerCount)} questions correct.")
+    template ("You got #{value(scoreBook.correctAnswerCount)} of the #{size(scoreBook.score)} questions correct.")
   }
 }

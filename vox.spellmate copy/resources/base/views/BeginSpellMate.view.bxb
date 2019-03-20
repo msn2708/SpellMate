@@ -26,7 +26,7 @@ result-view {
       dialog (Say Yes to begin the game or No to exit)
       on-confirm {
         intent {
-          goal {AskCurrentQuestion}
+          goal {AskNextQuestion}
           value: $expr(this)
         }      
       }

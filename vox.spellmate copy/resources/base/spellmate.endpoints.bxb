@@ -37,6 +37,15 @@ endpoints {
       accepted-inputs (announcer)
       local-endpoint ("calculateScore.js")
     }
+    action-endpoint (TerminateGame) {
+      accepted-inputs (announcer)
+      local-endpoint ("terminateGame.js")
+    }
+    
+    action-endpoint (RestartGame) {
+      accepted-inputs (announcer)
+      local-endpoint ("restartGame.js")
+    }
   }
 
 }

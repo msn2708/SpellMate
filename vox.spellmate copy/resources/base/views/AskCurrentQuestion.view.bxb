@@ -6,17 +6,13 @@ result-view {
   // message ("Here is your next question. Say Repeat Question to hear it again.")
   render {
 
-    layout {
-      section {
-        content {
-          single-line {
-            text {
-              value("")
-            }
-          }
-        }
-      }
-    }
+    // layout {
+    //   layout-macro (scores-layout) {
+    //     param (scores) {
+    //       expression (this.scoreBook.score)
+    //     }
+    //   }
+    // }
   }
   followup {
     prompt {

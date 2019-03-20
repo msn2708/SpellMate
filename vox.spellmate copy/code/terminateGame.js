@@ -1,4 +1,4 @@
 module.exports.function = function terminateGame (announcer) {
-  announer.counter = -1
+  announer.counter = -100
   return announcer
 }

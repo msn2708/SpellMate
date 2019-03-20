@@ -2,7 +2,7 @@ var console = require ('console')
 module.exports.function = function verifyAnswer (announcer, answer) {
 
   var counter = announcer.counter
-  if(counter == -1)
+  if(counter == -100)
     return announcer
   var currentQuestion = announcer.questionBank.questions[counter].challengeWord.toLowerCase()
   var spelledWord = answer.spelledWord
@@ -27,5 +27,8 @@ module.exports.function = function verifyAnswer (announcer, answer) {
     retAnnouncer.scoreBook.score[counter].question.challengeWord = currentQuestion
   }
 
+  if(retAnnouncer.counter == retAnnouncer.questionBank.questions.length-1) {
+    retAnnouncer.counter = -100
+  }
   return retAnnouncer
 }

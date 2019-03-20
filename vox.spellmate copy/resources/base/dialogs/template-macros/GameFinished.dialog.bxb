@@ -6,6 +6,6 @@ template-macro-def (GameFinished) {
     }
   }
   content {
-    template ("The Game is complete. You got #{value(scoreBook.correctAnswerCount)} of the #{size(scoreBook) +1} questions correct. Would you like to start another game?")
+    template ("The Game is complete. You got #{value(scoreBook.correctAnswerCount)} of the #{size(scoreBook.score)} questions correct.")
   }
 }

@@ -7,18 +7,34 @@ result-view {
     layout {
       section {
         content {
-          single-line {
-            text {
-              value(" ")
+          compound-card {
+            content {
+              image-card {
+                aspect-ratio(21:9)
+                image-object-fit (Cover)
+                text-position (Below)
+                image-url ("/images/logo.jpg")
+                title-area {
+                  halign (Start)
+                  slot1 {
+                    text {
+                      value {
+                        template ("You are on Question #{this.counter + 1} of #{size(this.questionBank.questions)}")
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
+
         }
       }
     }
   }
-  
+
   followup {
-    if (this.counter == -1) {
+    if (this.counter == -100) {
       prompt {
         dialog (Would you like to see how you scored?)
         on-confirm {

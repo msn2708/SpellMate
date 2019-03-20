@@ -3,13 +3,13 @@ dialog (Result) {
     from-output: AskCurrentQuestion    
   }
   
-  if(this.counter >= 0) {
+  if(this.counter >= -1) {
     if(this.counter == 0) {
       template("Here is your first question. Say Repeat Question to hear it again. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.")
     } else {
       template("Here is your next question. The word to spell is #{value(this.questionBank.questions[counter].challengeWord)}.")
     }
   } else {
-    template("That is all the questions I have. Would you like to hear your score?")    
+    template("That is all the questions I have. Would you like to hear your score?")   
   }
 }

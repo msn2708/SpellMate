@@ -3,8 +3,8 @@ dialog (Result) {
     from-output: VerifyAnswer (action)
   }
 
-  if(this.counter != -1) {
-    if(this.counter >=0) {
+  if(this.counter != -100) {
+    if(this.counter >= -1) {
       if (this.scoreBook.score[counter].result == true) {
         template-macro(AnswerSuccess)
       } else {
@@ -19,7 +19,7 @@ dialog (Result) {
     }
   }
   
-  if(this.counter == -1) {
+  if(this.counter == -100) {
     template-macro(GameFinished) {
       param (scoreBook) {
         expression (this.scoreBook)

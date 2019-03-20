@@ -3,7 +3,7 @@ dialog (Result) {
     from-output: CalculateScore (action)
   }
 
-  if(this.counter == -1) {
+  if(this.counter == -100) {
     // the game is done, 
     template-macro (GameFinished) {
       param (scoreBook) {

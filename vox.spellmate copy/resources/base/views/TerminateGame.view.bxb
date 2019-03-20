@@ -22,10 +22,10 @@ result-view {
   
   followup {
     prompt {
-      dialog ("")
+      dialog ("This game is terminated. Would you like to start a new game?")
       on-confirm {
         intent {
-          goal {TerminateGame}
+          goal {BeginSpellMate}
           value: $expr(this)
         }
       }

@@ -25,7 +25,7 @@ result-view {
   }
   followup {    
     prompt {
-      dialog ("")
+      dialog ("Would you like to start a new game?")
       on-confirm {
         intent {
           goal: BeginSpellMate

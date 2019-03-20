@@ -7,7 +7,7 @@ result-view {
     layout {
       section {
         title {
-          if(this.counter != -1) {
+          if(this.counter != -100) {
             if (this.scoreBook.score[this.counter].result == true) {
               choose (Random) {              
                 template ("Congratulations!")
@@ -18,124 +18,77 @@ result-view {
             } else {
               choose (Random) {
                 template ("Sorry! that is not correct")
-                template ("Better luck next time")      
+                template ("Better luck next time")                
               }
             }        
           }
         }
 
         content {
-          if(this.counter != -1) {
+          if(this.counter != -100) {
             if (this.scoreBook.score[this.counter].result == true) {
-              hbox {
-                content {
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("Question")
-                      }
-                    }
-                  }
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("Your answer")
-                      }
-                    }
+              cell-area {
+                slot1 {
+                  image {
+                    shape (Circle)
+                    url ("/images/correct.jpg")
                   }
                 }
-              }
-              hbox {
-                content {
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
-                        style (Title_M)
-                      }
+                slot2 {                  
+                  content {                    
+                    order (PrimarySecondary) 
+                    primary {
+                      template ("#{value(action.answer.spelledWord)}")                      
                     }
-                  }
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("#{value(action.answer.spelledWord)}")
-                        style (Title_M)
-                      }
+                    secondary {
+                      template ("#{value(this.questionBank.questions[counter].challengeWord)}")
                     }
                   }
                 }
               }
             } else {
-              hbox {
-                content {
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("Question")
-                      }
-                    }
+              cell-area {
+                slot1 {
+                  image {
+                    shape (Circle)
+                    url ("/images/incorrect.jpg")
                   }
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("Your answer")
-                      }
+                }
+                slot2 {
+                  content {
+                    order (PrimarySecondary) 
+                    primary {
+                      template ("#{value(action.answer.spelledWord)}")
+                    }
+                    secondary {
+                      template ("#{value(this.questionBank.questions[counter].challengeWord)}")
+
                     }
                   }
                 }
-              }
-              hbox {
-                content {
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("#{value(this.questionBank.questions[counter].challengeWord)}")                     
-                        style (Title_M)
-                      }
-                    }
-                  }
-                  vbox {
-                    halign (Start)
-                    valign (Baseline)
-                    content {
-                      text {
-                        value ("#{value(action.answer.spelledWord)}")
-                        style (Title_S)
-                      }
-                    }
-                  }
-                }
-              }            
+              }              
             }
+          } 
+        }
+      }
+      if (this.counter == -100) {
+        layout-macro (scores-layout) {
+          param (scores) {
+            expression (this.scoreBook.score)
           }
         }
       }
     }
   }
-
   followup {
-    if (this.counter == -1) {
+    if (this.counter == -100) {
       prompt {
         dialog {
-          template ("Would you like to hear your score?")
+          template ("Would you like to start a new game?")
         }
         on-confirm {
           intent {
-            goal: CalculateScore
+            goal: RestartGame
             value: $expr(this)
           }
         }
@@ -144,30 +97,44 @@ result-view {
         }
       }
     } else {
-      prompt {
-
-        dialog {
-          choose (Random) {
-            template (Would you like to see the next question?)
-            template (Ready for the next question?)
-            template (Shall we move on to the next question?)
+      if (this.counter == size(this.questionBank.questions) - 2) {
+        prompt {
+          dialog {
+            template (Ready for your last question?)
           }
+          on-confirm {
+            intent {
+              goal: AskNextQuestion
+              value: $expr(this)
+            }
+          }
+          on-deny {
+            message {
+              template ("Ok. Until next time then!")
+            }
+          }
+        }  
 
-        }
-
-        on-confirm {
-          intent {
-            goal: AskNextQuestion
-            value: $expr(this)
+      } else {
+        prompt {
+          dialog {
+            choose (Random) {
+              template (Would you like to see the next question?)
+              template (Ready for the next question?)
+              template (Shall we move on to the next question?)
+            }
+          }
+          on-confirm {
+            intent {
+              goal: AskNextQuestion
+              value: $expr(this)
+            }
+          }
+          on-deny {
+            message(Bye!)
           }
         }
-        on-deny {
-          message {
-            template ("Ok. Until next time then!")
-          }
-        }
-      }     
-    }
-
+      }
+    } 
   }
 }
