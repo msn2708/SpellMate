@@ -11,48 +11,13 @@ layout-macro-def (scores-layout) {
       content {
         for-each (scores) { 
           as (score) {
-            layout-macro (score-layout) {
-              param (score) {
-                expression (score)
+            if (score.isRead == 1) {
+              layout-macro (score-layout) {
+                param (score) {
+                  expression (score)
+                }
               }
             }
-            // hbox {
-            //   content {
-            //     vbox {
-            //       halign (Start)
-            //       valign (Middle)
-            //       content {
-            //         text {
-            //           value {
-            //             template ("#{value(score.question.challengeWord)}")
-            //           }
-            //         }
-            //       }
-            //     }
-            //     vbox {
-            //       halign (Center)
-            //       valign (Middle)
-            //       content {
-            //         text {
-            //           value {
-            //             template ("#{value(score.answer.spelledWord)}")
-            //           }
-            //         }
-            //       }
-            //     }
-            //     vbox {
-            //       halign (End)
-            //       valign (Middle)
-            //       content {
-            //         text {
-            //           value {
-            //             template ("#{value(score.result)}")
-            //           }
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
           }
         }
       }

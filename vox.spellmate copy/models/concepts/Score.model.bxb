@@ -12,4 +12,9 @@ structure (Score) {
     type (core.Boolean)
     min (Required) max (One)
   }
+  
+  property (isRead) {
+    type (IsRead) 
+    min (Required) max (One)
+  }
 }

@@ -1,0 +1,6 @@
+dialog (Result) {
+  match: Announcer(this) {
+    from-output: RestartGame
+  }
+  template("Welcome to SpellMate!")
+}

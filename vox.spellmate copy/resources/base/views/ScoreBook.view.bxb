@@ -5,10 +5,6 @@ result-view {
     
     layout {
       
-      layout-macro (scores-header) {
-        param ("header")
-      }
-      
       layout-macro (scores-layout) {
         param (scores) {
           expression (this.score)

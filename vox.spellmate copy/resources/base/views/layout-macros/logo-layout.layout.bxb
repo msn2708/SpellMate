@@ -1,23 +1,27 @@
 layout-macro-def (logo-layout) {
   params {
-    param (score) {
-      type (Score)
+    param (dummy) {
+      type (Announcer)
       max (One) min (Required)
     }
   }
 
   content {
-    image-card {
-      aspect-ratio(21:9)
-      image-object-fit (Cover)
-      text-position (Below)
-      image-url ("/images/logo.jpg")
-      title-area {
-        halign (Start)
-        slot1 {
-          text {
-            value {
-              template (" ")
+    section {
+      content {
+        image-card {
+          aspect-ratio(21:9)
+          image-object-fit (Cover)
+          text-position (Below)
+          image-url ("/images/logo.jpg")
+          title-area {
+            halign (Start)
+            slot1 {
+              text {
+                value {
+                  template (" ")
+                }
+              }
             }
           }
         }

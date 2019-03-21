@@ -4,6 +4,7 @@ module.exports.function = function verifyAnswer (announcer, answer) {
   var counter = announcer.counter
   if(counter == -100)
     return announcer
+
   var currentQuestion = announcer.questionBank.questions[counter].challengeWord.toLowerCase()
   var spelledWord = answer.spelledWord
   var localAnswer = spelledWord.replace(/\s/g,'').toLowerCase()
@@ -17,14 +18,19 @@ module.exports.function = function verifyAnswer (announcer, answer) {
   console.log ("Question: " + currentQuestion)
 
   if(currentQuestion.localeCompare(localAnswer) == 0) {
-    retAnnouncer.scoreBook.score[counter].answer.spelledWord = localAnswer
-    retAnnouncer.scoreBook.score[counter].result = true
+
     retAnnouncer.scoreBook.score[counter].question.challengeWord = currentQuestion
+    retAnnouncer.scoreBook.score[counter].result = true
+    retAnnouncer.scoreBook.score[counter].answer.spelledWord = localAnswer
+    retAnnouncer.scoreBook.score[counter].isRead = 1
     retAnnouncer.scoreBook.correctAnswerCount += 1
   } else {
+    // retAnnouncer.scoreBook.score[counter] = {answer:{spelledWord:localAnswer}, result:false, question:{challengeWord:currentQuestion}}
     retAnnouncer.scoreBook.score[counter].answer.spelledWord = localAnswer
     retAnnouncer.scoreBook.score[counter].result = false
     retAnnouncer.scoreBook.score[counter].question.challengeWord = currentQuestion
+    retAnnouncer.scoreBook.score[counter].isRead = 1
+
   }
 
   if(retAnnouncer.counter == retAnnouncer.questionBank.questions.length-1) {

@@ -1,0 +1,41 @@
+result-view {
+  match: Announcer(this) {
+    from-output: RestartGame
+  }
+  render {
+    layout {
+      section {
+        content {
+          single-line {
+            text {
+              value ("Welcome to SpellMate!")
+            }
+          }
+          image {
+            object-fit (Cover)
+            url {
+              template ("/images/logo.jpg")
+            }
+          }
+        }
+      }
+    }
+  }
+  followup {
+    prompt {      
+      dialog (Say Yes to begin the game or No to exit)
+      on-confirm {
+        intent {
+          goal {AskNextQuestion}
+          value: $expr(this)
+        }      
+      }
+      on-deny {
+        intent {
+          goal: TerminateGame
+          value: $expr(this)
+        }
+      }
+    }
+  }
+}

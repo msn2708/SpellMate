@@ -4,20 +4,19 @@ result-view {
   }
 
   render {
+    
     layout {
+      layout-macro (logo-layout) {
+        param(dummy) {
+          expression (this)
+        }
+      }
       layout-macro (scores-layout) {
         param (scores) {
           expression (this.scoreBook.score)
         }
       }
-      
-      // layout-macro (scores-calculation) {
-      //   param (scores) {
-      //     expression (this.score)
-      //   }
-      // }
     }
-    
   }
   
   followup {

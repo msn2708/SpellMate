@@ -20,6 +20,7 @@ module.exports.function = function initAnnouncer () {
       score[i].question = questions[i]
       score[i].answer = {spelledWord:' '} 
       score[i].result = false
+      score[i].isRead = 0
     }
     return {questionBank:{questions:questions}, scoreBook:{score:score, correctAnswerCount:0}, counter:-1}
   } else {

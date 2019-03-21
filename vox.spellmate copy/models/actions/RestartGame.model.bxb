@@ -7,5 +7,6 @@ action (RestartGame) {
       min (Required) max (One)
     }
   }
-  output (Announcer)
+  output (Announcer) {
+  }
 }

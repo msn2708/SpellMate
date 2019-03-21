@@ -7,8 +7,6 @@ layout-macro-def (score-layout) {
   }
 
   content {
-    // section {
-    //   content {
     cell-card {
       slot1 {
         image {
@@ -39,52 +37,7 @@ layout-macro-def (score-layout) {
       }
     }
   }
-  //   image-card {
-  //     aspect-ratio (16:9)
-  //     image-object-fit (Cover)
-  // 
-  //     title-area {
-  //       halign (Start)
-  // 
-  //       slot1 {
-  //         if (score.result == true) {
-  //           text {             
-  //             style (Title_M)
-  //             value 
-  //             {template ("#{value(score.question.challengeWord)}")}
-  //           }
-  //         } else {           
-  //           text {
-  //             style (Title_M)
-  //             value {template ("#{value(score.question.challengeWord)}")}
-  //           }               
-  //         }
-  //       }
-  // 
-  //       slot2 {          
-  //         single-line {
-  //           text {
-  //             style(Title_M)
-  //             value {
-  //               template ("#{value(score.answer.spelledWord)}")
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  // 
-  //     text-position (Overlay)
-  // 
-  //     image-url {
-  //       if (score.result == true) {
-  //         template ("/images/Untitled.jpg")
-  //       } else {
-  //         template ("/images/Untitled.jpg")              
-  //       }
-  //     }
-  //   }
 }
-// }
-//   }
-// }
+
+
 

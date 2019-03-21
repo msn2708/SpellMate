@@ -1,16 +1,21 @@
+var fail = require ('fail')
 module.exports.function = function restartGame (announcer) {
-  if(announcer.questions != null) {
-    var score = new Array ()
+  if(announcer != null) {
+    // var score = new Array ()
     i = 0
-    for (i=0; i<questions.length; i++) {
-      score[i].answer = {spelledWord:' '} 
-      score[i].result = false
+    for (i=0; i<announcer.questionBank.questions.length; i++) {
+      announcer.scoreBook.score[i].answer = {spelledWord:' '}
+      announcer.scoreBook.score[i].result = false
+      announcer.scoreBook.score[i].isRead = false
+
+      // score[i].answer = {spelledWord:' '} 
+      // score[i].result = false
+      // score[i].isRead = false
     }
-    
+
     announcer.scoreBook.correctAnswerCount = 0
     announcer.counter = -1
     return announcer
-    // return {questionBank:{questions:announcer.questions}, scoreBook:{score:score, correctAnswerCount:0}, counter:0}
   } else {
     return null
   }

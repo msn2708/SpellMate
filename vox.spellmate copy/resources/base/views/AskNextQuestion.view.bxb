@@ -14,20 +14,29 @@ result-view {
                 image-object-fit (Cover)
                 text-position (Below)
                 image-url ("/images/logo.jpg")
+                
                 title-area {
                   halign (Start)
                   slot1 {
                     text {
+                      style (Title_M)
                       value {
                         template ("You are on Question #{this.counter + 1} of #{size(this.questionBank.questions)}")
+                        
                       }
                     }
                   }
                 }
+                
               }
             }
           }
 
+        }
+      }
+      layout-macro (scores-layout) {
+        param (scores) {
+          expression (this.scoreBook.score)
         }
       }
     }

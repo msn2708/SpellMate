@@ -5,6 +5,11 @@ result-view {
 
   render {
     layout {
+      layout-macro (logo-layout) {
+        param (dummy) {
+          expression (this)
+        }
+      }
       section {
         title {
           if(this.counter != -100) {
@@ -67,10 +72,11 @@ result-view {
                   }
                 }
               }              
-            }
-          } 
-        }
+            }                          
+          }
+        } 
       }
+
       if (this.counter == -100) {
         layout-macro (scores-layout) {
           param (scores) {
@@ -80,6 +86,7 @@ result-view {
       }
     }
   }
+
   followup {
     if (this.counter == -100) {
       prompt {
@@ -93,7 +100,7 @@ result-view {
           }
         }
         on-deny {       
-          message(Bye)
+          message(Thank you for playing SpellMate. Bye!)
         }
       }
     } else {
@@ -131,7 +138,7 @@ result-view {
             }
           }
           on-deny {
-            message(Bye!)
+            message("Ok. Until next time then!")
           }
         }
       }
